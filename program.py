@@ -11,6 +11,8 @@ import win32api, win32con
 # Send To TL: (X: 1428 Y:  773)
 # Back: (X:  129 Y:  158)
 # Decrease: (X: 1037 Y:  750)
+# Increase Bid: (X:  969 Y:  751)
+# Decrease Min Bid: (X:  507 Y:  754)
 
 print("*****STARTING BOT*****")
 time.sleep(3)
@@ -25,11 +27,24 @@ while keyboard.is_pressed('q') == False:
     click(1299, 946) # Search
     time.sleep(1)
     click(1446, 720) # Buy Now
-    time.sleep(1)
+    time.sleep(0.75)
     click(958, 602) # Ok
+    time.sleep(0.5)
+    # click(1428, 773) # Send to TL
     click(129, 158) # Back
     time.sleep(1)
-    click(1037, 750) # Decrease
+    click(969, 751) # Increase Min Bid
+
+    # click(1299, 946) # Search
+    # time.sleep(1)
+    # click(1446, 720) # Buy Now
+    # time.sleep(0.75)
+    # click(958, 602) # Ok
+    # time.sleep(1)
+    # # click(1428, 773) # Send to TL
+    # click(129, 158) # Back
+    # time.sleep(1)
+    # click(507, 754) # Decrease Min Bid
 
 if keyboard.is_pressed('q') == True:
     print("*****EXITING*****")
