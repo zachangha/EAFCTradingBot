@@ -35,16 +35,16 @@ while keyboard.is_pressed('q') == False:
     time.sleep(1)
     click(969, 751) # Increase Min Bid
 
-    # click(1299, 946) # Search
-    # time.sleep(1)
-    # click(1446, 720) # Buy Now
-    # time.sleep(0.75)
-    # click(958, 602) # Ok
-    # time.sleep(1)
-    # # click(1428, 773) # Send to TL
-    # click(129, 158) # Back
-    # time.sleep(1)
-    # click(507, 754) # Decrease Min Bid
+    click(1299, 946) # Search
+    time.sleep(1)
+    click(1446, 720) # Buy Now
+    time.sleep(0.75)
+    click(958, 602) # Ok
+    time.sleep(1)
+    # click(1428, 773) # Send to TL
+    click(129, 158) # Back
+    time.sleep(1)
+    click(507, 754) # Decrease Min Bid
 
 if keyboard.is_pressed('q') == True:
     print("*****EXITING*****")
