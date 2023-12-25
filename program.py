@@ -24,13 +24,16 @@ def click(x, y):
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
 
 while keyboard.is_pressed('q') == False:
+    
+    
     click(1299, 946) # Search
     time.sleep(1)
     click(1446, 720) # Buy Now
     time.sleep(0.75)
     click(958, 602) # Ok
-    time.sleep(0.5)
-    # click(1428, 773) # Send to TL
+    time.sleep(2)
+    click(1428, 773) # Send to TL
+    time.sleep(1)
     click(129, 158) # Back
     time.sleep(1)
     click(969, 751) # Increase Min Bid
@@ -40,11 +43,14 @@ while keyboard.is_pressed('q') == False:
     click(1446, 720) # Buy Now
     time.sleep(0.75)
     click(958, 602) # Ok
+    time.sleep(2)
+    click(1428, 773) # Send to TL
     time.sleep(1)
-    # click(1428, 773) # Send to TL
     click(129, 158) # Back
     time.sleep(1)
     click(507, 754) # Decrease Min Bid
+
+
 
 if keyboard.is_pressed('q') == True:
     print("*****EXITING*****")

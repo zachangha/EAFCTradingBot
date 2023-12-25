@@ -2,7 +2,7 @@ import pyautogui
 import time
 
 pyautogui.displayMousePosition()
-
+# BUYING
 # Search 1: (X: 1299 Y:  946)
 # Buy Now: (X: 1446 Y:  720)
 # Ok: (X:  958 Y:  602)
@@ -12,6 +12,10 @@ pyautogui.displayMousePosition()
 # Increase Min Bid: (X:  969 Y:  751)
 # Decrease Min Bid: (X:  507 Y:  754)
 
+# SELLING
+# List: (X: 1351 Y:  591)
+# Buy Now Price: (X: 1395 Y:  790)
+# Confirm Listing: (X: 1425 Y:  921)
 
 def startup():
     time.sleep(5)
