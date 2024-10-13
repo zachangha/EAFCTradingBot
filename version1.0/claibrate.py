@@ -1,6 +1,7 @@
 import pyautogui
 import time
 import json
+import os
 from buy import click
 
 # BUYING
@@ -20,21 +21,23 @@ from buy import click
 
 def init():
     print("Starting calibration.")
+    image_path = './images/buy/Search.PNG'
+    print(os.path.isfile(image_path))
 
-    SearchButtonLocation = pyautogui.locateOnScreen('images/buy/Search.PNG')
+    SearchButtonLocation = pyautogui.locateOnScreen('version1.0/images/buy/Search.PNG')
     LocationX, LocationY = pyautogui.center(SearchButtonLocation)
     SearchButton = [LocationX, LocationY]
     click(SearchButton[0], SearchButton[1])
     time.sleep(1)
 
-    buyNowButtonLocation = pyautogui.locateAllOnScreen('images/buy/BuyNow.PNG', confidence=0.80)
+    buyNowButtonLocation = pyautogui.locateAllOnScreen('version1.0/images/buy/BuyNow.PNG', confidence=0.80)
     buyNowButtonLocation = max(buyNowButtonLocation, key=lambda loc: loc[-1])
     LocationX, LocationY = pyautogui.center(buyNowButtonLocation)
     BuyNowButton = [LocationX, LocationY]
     click(BuyNowButton[0], BuyNowButton[1])
     time.sleep(0.75)
 
-    OkButtonLocation = pyautogui.locateAllOnScreen('images/buy/Ok.PNG', confidence=0.80)
+    OkButtonLocation = pyautogui.locateAllOnScreen('version1.0/images/buy/Ok.PNG', confidence=0.80)
     OkButtonLocation = max(OkButtonLocation, key=lambda loc: loc[-1])
     LocationX, LocationY = pyautogui.center(OkButtonLocation)
     OkButton = [LocationX, LocationY]
@@ -42,7 +45,7 @@ def init():
     time.sleep(2)
 
     try:
-        TLButtonLocation = pyautogui.locateAllOnScreen('images/buy/SendToTL.PNG', confidence=0.80)
+        TLButtonLocation = pyautogui.locateAllOnScreen('version1.0/images/buy/SendToTL.PNG', confidence=0.80)
         if not TLButtonLocation:
             raise pyautogui.ImageNotFoundException(f"Can't find Transfer List Button")
         TLButtonLocation = max(TLButtonLocation, key=lambda loc: loc[-1])
@@ -53,20 +56,20 @@ def init():
     except pyautogui.ImageNotFoundException as e:
         print(f"Can't find Transfer List Button")
 
-    BackButtonLocation = pyautogui.locateAllOnScreen('images/buy/Back.PNG', confidence=0.80)
+    BackButtonLocation = pyautogui.locateAllOnScreen('version1.0/images/buy/Back.PNG', confidence=0.80)
     BackButtonLocation = max(BackButtonLocation, key=lambda loc: loc[-1])
     LocationX, LocationY = pyautogui.center(BackButtonLocation)
     BackButton = [LocationX, LocationY]
     click(BackButton[0], BackButton[1])
     time.sleep(1)
 
-    IncreaseButtonLocation = pyautogui.locateAllOnScreen('images/buy/Increase.PNG', confidence=0.80)
+    IncreaseButtonLocation = pyautogui.locateAllOnScreen('version1.0/images/buy/Increase.PNG', confidence=0.80)
     IncreaseButtonLocation = max(IncreaseButtonLocation, key=lambda loc: loc[-1])
     LocationX, LocationY = pyautogui.center(IncreaseButtonLocation)
     IncreaseButton = [LocationX, LocationY]
     click(IncreaseButton[0], IncreaseButton[1])
 
-    DecreaseButtonLocation = pyautogui.locateAllOnScreen('images/buy/Decrease.PNG', confidence=0.80)
+    DecreaseButtonLocation = pyautogui.locateAllOnScreen('version1.0/images/buy/Decrease.PNG', confidence=0.80)
     DecreaseButtonLocation = max(DecreaseButtonLocation, key=lambda loc: loc[-1])
     LocationX, LocationY = pyautogui.center(DecreaseButtonLocation)
     DecreaseButton = [LocationX, LocationY]
@@ -78,7 +81,7 @@ def init():
         coord[0] = int(coord[0])
         coord[1] = int(coord[1])
 
-    with open("buying.json", "w") as json_file:
+    with open("version1.0/buying.json", "w") as json_file:
         json.dump(updateCoordinates, json_file)
 
     print("Calibration is done.")

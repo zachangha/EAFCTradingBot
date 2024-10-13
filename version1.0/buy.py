@@ -23,14 +23,13 @@ def click(x, y):
 if __name__ == "__main__":
 
     print("*****LOADING CORDINATES*****")
-    with open("buying.json", "r") as json_file:
+    with open("version1.0/buying.json", "r") as json_file:
         coordinates = json.load(json_file)
     print(coordinates)
     print("*****STARTING BOT*****")
     time.sleep(3)
 
-    while keyboard.is_pressed('q') == False:
-        
+    while not keyboard.is_pressed('q'):
         
         click(coordinates[0][0], coordinates[0][1]) # Search
         time.sleep(1)
