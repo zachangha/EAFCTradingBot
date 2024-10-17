@@ -21,7 +21,7 @@ from buy import click
 
 def init():
     print("Starting calibration.")
-    image_path = './images/buy/Search.PNG'
+    image_path = 'version1.0/images/buy/Search.PNG'
     print(os.path.isfile(image_path))
 
     SearchButtonLocation = pyautogui.locateOnScreen('version1.0/images/buy/Search.PNG')
